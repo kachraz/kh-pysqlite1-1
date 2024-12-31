@@ -85,3 +85,5 @@ def read_root():
 # Getting the users
 @my_db_pussy.get("/sluts/", response_model=list[UserResponse])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    users = db.query(User).offset(skip).limit(limit).all()
+    return users
