@@ -106,7 +106,27 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 # Update the user with the ID which was defined earlier int he Db model
 
 
+# Pydantic Model for doing updated
 class UserUpdate(BaseModel):
     name: Optional[str] = None
     fetish: Optional[str] = None
     email: Optional[str] = None
+
+
+# Actuak update endpoint
+my_db_pussy.put("/sluts/{user_id}", response_model=UserResponse)
+
+
+def update_user(user_id: int, user_update: UserUpdate, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.id == user_id).first()
+    if user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    if user_update.name is not None:
+        user.name = user_update.name
+    if user_update.fetish is not None:
+        user.fetish = user_update.fetish
+    if user_update.email is not None:
+        user.email = user_update.email
+    db.commit()
+    db.refresh(user)
+    return user
