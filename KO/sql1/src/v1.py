@@ -53,3 +53,9 @@ def get_db():
 #     db.commit()
 #     db.refresh(db_user)
 #     return db_user
+
+
+class UserCreate(BaseModel):
+    name: str
+    fetish: str
+    email: str
