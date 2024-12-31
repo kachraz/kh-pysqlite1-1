@@ -20,8 +20,7 @@ install(show_locals=True)
 
 def cprint(name) -> str:
     console.print(
-        f"""
-              {name}             """,
+        f"""{name}""",
         style="bold",
         justify="center",
     )
