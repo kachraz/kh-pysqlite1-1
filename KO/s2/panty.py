@@ -5,7 +5,10 @@ install(show_locals=True)
 
 
 def main():
-    cprint("Panty.py")
+    cprint("""
+           Panty.py - 
+           smell assa and pussy 
+           """)
 
 
 if __name__ == "__main__":
