@@ -5,7 +5,7 @@ install(show_locals=True)
 
 
 def main():
-    cprint("""
+    cprint2("""
            Panty.py - 
            smell assa and pussy 
            """)
