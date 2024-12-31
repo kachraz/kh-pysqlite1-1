@@ -80,3 +80,6 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 @my_db_pussy.get("/")
 def read_root():
     return {"message": "Welcome to the API"}
+
+
+# Getting the users
