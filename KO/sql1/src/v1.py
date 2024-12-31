@@ -57,6 +57,13 @@ class UserCreate(BaseModel):
     email: str
 
 
+class UserResponse(BaseModel):
+    id: int
+    name: str
+    fetish: str
+    email: str
+
+
 @my_db_pussy.post("sluts/", response_model=User)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = User(name=user.name, fetish=user.fetish, email=user.email)
