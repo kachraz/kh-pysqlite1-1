@@ -64,10 +64,10 @@ class UserResponse(BaseModel):
     email: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True  # Update to the new configuration key
 
 
-@my_db_pussy.post("sluts/", response_model=UserResponse)
+@my_db_pussy.post("/sluts/", response_model=UserResponse)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = User(name=user.name, fetish=user.fetish, email=user.email)
     db.add(db_user)
@@ -76,6 +76,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     return db_user  # Return the created User instance
 
 
+# Add a route for the root path
 @my_db_pussy.get("/")
 def read_root():
-    return {"message": "Welcome to FuckAllNight"}
+    return {"message": "Welcome to the API"}
