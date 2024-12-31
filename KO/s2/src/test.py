@@ -24,6 +24,3 @@ def cprint(name):
         style="bold",
         justify="center",
     )
-
-
-cprint("Hello World")
