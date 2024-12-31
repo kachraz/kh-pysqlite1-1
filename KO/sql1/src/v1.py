@@ -16,7 +16,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
-# Defining the table here
+# Defining the table structure here
 class User(Base):
     __tablename__ = "sluts"
     id = Column(Integer, primary_key=True, index=True)
