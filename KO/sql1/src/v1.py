@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 from fastapi import FastAPI
 
+# -- Setting up the connection to the sqlite databse ---
 app = FastAPI()
 
 DATABASE_URL = "sqlite:///./pusy.db"
