@@ -4,6 +4,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import Session
 
+# Pretty Errors
+from rich.traceback import install
+
+install(show_locals=True)
+
 # Importing FastAPI
 from fastapi import FastAPI, Depends
 
