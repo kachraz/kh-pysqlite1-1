@@ -7,11 +7,5 @@ import uvicorn
 
 install(show_locals=True)
 
-
-# def main():
-#     label("Execute v1a")
-#     v1a()
-
-
 if __name__ == "__main__":
     uvicorn.run(my_db_pussy, host="0.0.0.0", port=9000)
