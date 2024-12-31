@@ -1,4 +1,7 @@
 from src.v1 import v1f1
+from rich.traceback import install
+
+install(show_locals=True)
 
 
 def main():
