@@ -14,4 +14,4 @@ install(show_locals=True)
 
 
 if __name__ == "__main__":
-    uvicorn.run(my_db_pussy, host="0.0.0.0", port=8000)
+    uvicorn.run(my_db_pussy, host="0.0.0.0", port=8100)
