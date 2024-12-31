@@ -45,17 +45,16 @@ def get_db():
         db.close()
 
 
-# The code here was written to undestand how the post operation would work
-# @my_db_pussy.post("sluts/", response_model=User)
-# def create_user(user: User, db: Session = Depends(get_db)):
-#     db_user = User(name=user.name, fetish=user.fetish, email=user.email)
-#     db.add(db_user)
-#     db.commit()
-#     db.refresh(db_user)
-#     return db_user
-
-
 class UserCreate(BaseModel):
     name: str
     fetish: str
     email: str
+
+
+@my_db_pussy.post("sluts/", response_model=User)
+def create_user(user: User, db: Session = Depends(get_db)):
+    db_user = User(name=user.name, fetish=user.fetish, email=user.email)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
