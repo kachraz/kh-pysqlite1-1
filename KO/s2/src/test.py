@@ -28,7 +28,7 @@ def cprint1(name):
 
 def cprint2(name):
     panel = Panel.fit(
-        f"""[magenta]{name}[/magenta]""",
+        f"""[green_yellow]{name}[/green_yellow]""",
         title="Mistress",
         subtitle="ToiletSlave",
         style="Italic",
