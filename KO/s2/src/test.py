@@ -18,11 +18,10 @@ install(show_locals=True)
 # -------------------------------------------------------
 
 
-def cprint(name):
+def cprint(name) -> str:
     console.print(
         f"""
-              
-              """,
+              {name}             """,
         style="bold",
         justify="center",
     )
