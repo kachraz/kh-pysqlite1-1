@@ -25,4 +25,15 @@ def cprint1(name):
         justify="center",
     )
 
+
 def cprint2(name):
+    panel = Panel(
+        """
+Enjoy StinlySmellySWeaty women
+""",
+        title="Mistress",
+        subtitle="ToiletSlave",
+        style="Italic",
+        border_style="magenta",
+    )
+    console.print(panel)
