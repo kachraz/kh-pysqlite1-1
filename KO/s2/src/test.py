@@ -18,10 +18,10 @@ install(show_locals=True)
 # -------------------------------------------------------
 
 
-def cprint(*args, **kwargs):
+def cprint(name):
     console.print(
         f"""
-              ${*args}
+              
               """,
         style="bold",
         justify="center",
