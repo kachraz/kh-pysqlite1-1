@@ -20,3 +20,11 @@ install(show_locals=True)
 
 def cprint(*args, **kwargs):
     console.print(*args, **kwargs)
+    console.print(
+        """
+              Centered Text - mistress fart
+              in mouth and nose
+              """,
+        style="bold",
+        justify="center",
+    )
