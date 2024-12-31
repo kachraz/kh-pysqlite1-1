@@ -3,6 +3,14 @@ from sqlalchemy import create_engine, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+DATABASE_URL = "sqlite:///./pusy.db"
+
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+
 
 def v1a():
     print("hey")
