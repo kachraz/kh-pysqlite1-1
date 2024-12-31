@@ -8,4 +8,8 @@ import uvicorn
 install(show_locals=True)
 
 if __name__ == "__main__":
-    uvicorn.run(my_db_pussy, host="0.0.0.0", port=9000, reload=True)
+    uvicorn.run(
+        my_db_pussy,
+        host="0.0.0.0",
+        port=9000,
+    )
