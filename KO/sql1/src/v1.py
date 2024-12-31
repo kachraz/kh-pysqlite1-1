@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import Session
 
 # Importing FastAPI
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 
 # Validating the input into the db
 from pydantic import BaseModel
@@ -45,6 +45,7 @@ def get_db():
         db.close()
 
 
+# Defining a pydantic model
 class UserCreate(BaseModel):
     name: str
     fetish: str
