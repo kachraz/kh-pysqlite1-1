@@ -116,7 +116,7 @@ class UserUpdate(BaseModel):
 # Actuak update endpoint
 
 
-@app.put("")
+@my_db_pussy.put("/sluts/{user_id}", response_model=UserResponse)
 def update_user(user_id: int, user_update: UserUpdate, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
