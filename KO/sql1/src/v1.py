@@ -44,6 +44,7 @@ class User(Base):
 Base.metadata.create_all(bind=engine)
 
 
+# sqlite db intialization function - THis remains constant in every project
 def get_db():
     db = SessionLocal()
     try:
@@ -52,13 +53,14 @@ def get_db():
         db.close()
 
 
-# Defining a pydantic model
+# Pydantic Model for users creation
 class UserCreate(BaseModel):
     name: str
     fetish: str
     email: str
 
 
+# Pydantic model for getting the response
 class UserResponse(BaseModel):
     id: int
     name: str
@@ -69,6 +71,7 @@ class UserResponse(BaseModel):
         from_attributes = True  # Update to the new configuration key
 
 
+# Post Endpoint for populating DB
 @my_db_pussy.post("/sluts/", response_model=UserResponse)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = User(name=user.name, fetish=user.fetish, email=user.email)
@@ -78,22 +81,32 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     return db_user  # Return the created User instance
 
 
-# Add a route for the root path
+# Add a route for the root path - This was not necessary
 @my_db_pussy.get("/")
 def read_root():
     return {"message": "Welcome to the API"}
 
 
-# Getting the users
+# Generic Get Endpoint
 @my_db_pussy.get("/sluts/", response_model=list[UserResponse])
 def read_users(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     users = db.query(User).offset(skip).limit(limit).all()
     return users
 
 
+# Getting the user with the ID which was defined earlier int he Db model
 @my_db_pussy.get("/sluts/{user_id}", response_model=UserResponse)
 def read_user(user_id: int, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.id == user_id).first()
     if user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return user
+
+
+# Update the user with the ID which was defined earlier int he Db model
+
+
+class UserUpdate(BaseModel):
+    name: Optional[str] = None
+    fetish: Optional[str] = None
+    email: Optional[str] = None
