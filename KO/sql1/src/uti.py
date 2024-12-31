@@ -9,7 +9,7 @@ console = Console()
 def label(name):
     panel = Panel.fit(
         f"""{name}""",
-        title="macchangers",
+        title="FastAPI Sqlite",
         subtitle="v1",
         style="Italic",
         border_style="magenta",
