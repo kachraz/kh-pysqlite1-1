@@ -43,6 +43,13 @@ Base.metadata.create_all(bind=engine)
 
 
 def get_db():
+/*************  ✨ Codeium Command ⭐  *************/
+    """
+    FastAPI dependency to get a database session.
+    Yields the db object when requested by the route.
+    Closes the db object when the route is done.
+    """
+/******  8b11bc1c-0e58-41e7-9f66-f4a6854e6c35  *******/
     db = SessionLocal()
     try:
         yield db
