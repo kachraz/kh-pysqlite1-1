@@ -16,3 +16,7 @@ from rich.traceback import install
 
 install(show_locals=True)
 # -------------------------------------------------------
+
+
+def cprint(*args, **kwargs):
+    console.print(*args, **kwargs)
