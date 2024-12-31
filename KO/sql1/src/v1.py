@@ -4,6 +4,7 @@ from sqlalchemy import create_engine, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import Session
+from typing import Optional
 
 # Pretty Errors
 from rich.traceback import install
