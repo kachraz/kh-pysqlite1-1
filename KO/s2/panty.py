@@ -1,3 +1,8 @@
+from rich.traceback import install
+
+install(show_locals=True)
+
+
 def main():
     print("Hello from s2!")
 
