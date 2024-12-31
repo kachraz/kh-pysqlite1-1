@@ -5,7 +5,7 @@ install(show_locals=True)
 
 
 def main():
-    print("Hello from s2!")
+    cprint("Panty.py")
 
 
 if __name__ == "__main__":
