@@ -27,7 +27,7 @@ def cprint1(name):
 
 
 def cprint2(name):
-    panel = Panel(
+    panel.fit = Panel(
         f"""{name}""",
         title="Mistress",
         subtitle="ToiletSlave",
