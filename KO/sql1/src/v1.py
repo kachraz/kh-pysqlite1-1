@@ -63,13 +63,4 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
-    return db_user
-
-
-@my_db_pussy.post("sluts/", response_model=User)
-def create_user(user: UserCreate, db: Session = Depends(get_db)):
-    db_user = User(name=user.name, fetish=user.fetish, email=user.email)
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
     return db_user  # Return the created User instance
