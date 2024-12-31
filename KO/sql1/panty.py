@@ -8,9 +8,9 @@ import uvicorn
 install(show_locals=True)
 
 
-def main():
-    label("Execute v1a")
-    v1a()
+# def main():
+#     label("Execute v1a")
+#     v1a()
 
 
 if __name__ == "__main__":
