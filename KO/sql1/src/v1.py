@@ -7,6 +7,9 @@ from sqlalchemy.orm import Session
 # Importing FastAPI
 from fastapi import FastAPI
 
+# Validating the input into the db
+from pydantic import BaseModel
+
 # -- Setting up the connection to the sqlite databse ---
 # Note these are all the things which you will import into your main.py
 
@@ -42,10 +45,11 @@ def get_db():
         db.close()
 
 
-@my_db_pussy.post("sluts/", response_model=User)
-def create_user(user: User, db: Session = Depends(get_db)):
-    db_user = User(name=user.name, fetish=user.fetish, email=user.email)
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
-    return db_user
+# The code here was written to undestand how the post operation would work
+# @my_db_pussy.post("sluts/", response_model=User)
+# def create_user(user: User, db: Session = Depends(get_db)):
+#     db_user = User(name=user.name, fetish=user.fetish, email=user.email)
+#     db.add(db_user)
+#     db.commit()
+#     db.refresh(db_user)
+#     return db_user
