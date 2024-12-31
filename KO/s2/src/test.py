@@ -29,7 +29,7 @@ def cprint1(name):
 def cprint2(name):
     panel = Panel(
         """
-Enjoy StinlySmellySWeaty women
+Enjoy StinkySmellySWeaty women
 """,
         title="Mistress",
         subtitle="ToiletSlave",
