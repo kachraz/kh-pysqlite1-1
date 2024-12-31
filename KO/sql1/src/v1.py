@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker
 from fastapi import FastAPI
 
 # -- Setting up the connection to the sqlite databse ---
-app = FastAPI()
+MyPussy = FastAPI()
 
 DATABASE_URL = "sqlite:///./pusy.db"
 
@@ -16,6 +16,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
+# Defining the table here
 class User(Base):
     __tablename__ = "sluts"
     id = Column(Integer, primary_key=True, index=True)
