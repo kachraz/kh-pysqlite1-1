@@ -67,7 +67,7 @@ class UserResponse(BaseModel):
         orm_mode = True
 
 
-@my_db_pussy.post("sluts/", response_model=UserREsponse)
+@my_db_pussy.post("sluts/", response_model=UserResponse)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = User(name=user.name, fetish=user.fetish, email=user.email)
     db.add(db_user)
