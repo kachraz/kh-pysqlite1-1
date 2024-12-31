@@ -13,5 +13,10 @@
 1. After you execute the `main.py` you can test out akll the enpoints by going to 
 
 ```sh 
+# Actual enpoint
+https://vigilant-cod-jv7pg6w77xp2q996-9000.app.github.dev/docs
 
+# Generic Enddpoint
+https://<site:port>/docs
 ```
+- Now at thsi `/docs` endpoint you test out all the enpoints which are defined in the routes in [`./src/v1.py`](./src/v1.py)
