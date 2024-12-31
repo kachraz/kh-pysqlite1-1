@@ -40,3 +40,6 @@ def get_db():
         yield db
     finally:
         db.close()
+
+@my_db_pussy.post("sluts/", response_model=User)
+def create_user(user: User, db: Session = Depends(get_db)):
