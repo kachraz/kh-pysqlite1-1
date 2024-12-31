@@ -6,6 +6,7 @@ install(show_locals=True)
 
 
 def main():
+    rprint("[blue] Running ")
     v1f1()
 
 
