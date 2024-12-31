@@ -74,3 +74,8 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_user)
     return db_user  # Return the created User instance
+
+
+@my_db_pussy.get("/")
+def read_root():
+    return {"message": "Welcome to the API"}
